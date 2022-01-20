@@ -1,0 +1,18 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <!-- Change car name to match the name of the car, e.g. car1 -->
+  <arg name="car_name" default="car" />
+
+  <group ns="$(arg car_name)">
+
+    <group ns="teleop">
+        <include file="$(find mushr_base)/launch/includes/joy_teleop.launch">
+            <arg name="car_name" value="/$(arg car_name)" />
+        </include>
+    </group>
+
+
+  </group>
+
+
+</launch>
