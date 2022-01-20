@@ -259,6 +259,9 @@ class JoyTeleop:
                     val = joy_state.axes[mapping["axis"]] * mapping.get(
                         "scale", 1.0
                     ) + mapping.get("offset", 0.0)
+                    # FOR DEBUGGING
+                    if mapping["axis"] == 2:
+                        print("Steering: " + str(joy_state.axes[mapping["axis"]]))
 
                 self.set_member(msg, mapping["target"], val)
 

@@ -216,13 +216,11 @@ class RacecarState:
     """
 
     def init_pose_cb(self, msg):
-
         # Get the pose of the car w.r.t the map in meters
         rx_trans = np.array(
             [msg.pose.pose.position.x, msg.pose.pose.position.y], dtype=np.float
         )
         rx_rot = utils.quaternion_to_angle(msg.pose.pose.orientation)
-
         # Get the pose of the car w.r.t the map in pixels
         if self.map_info is not None:
             map_rx_pose = utils.world_to_map(
@@ -238,7 +236,6 @@ class RacecarState:
             ]
             == 1
         ):
-
             self.cur_odom_to_base_lock.acquire()
             self.cur_map_to_odom_lock.acquire()
 

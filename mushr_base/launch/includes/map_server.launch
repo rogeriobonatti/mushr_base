@@ -1,5 +1,6 @@
 <launch>
-    <arg name="map" default="$(find mushr_base)/maps/sandbox.yaml" />
+    <!-- <arg name="map" default="$(find mushr_base)/maps/real-floor0-edited.yaml" /> -->
+    <arg name="map" default="$(find mushr_base)/maps/bravern_13_mod.yaml" />
 
     <node pkg="map_server" name="map_server" type="map_server" args="$(arg map)" />
 </launch>
